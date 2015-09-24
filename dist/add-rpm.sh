@@ -1,6 +1,9 @@
 #!/bin/sh
 DIR=`dirname $0`
-rpm --resign $1
+#echo "%_signature gpg" > ~/.rpmmacros
+#echo "%_gpg_name 02C2C81D" >> ~/.rpmmacros
+#$DIR/rpm-sign.exp --resign $1
+mkdir -p $DIR/rpm
 cp $1 $DIR/rpm
 createrepo $DIR/rpm
-gpg --detach-sign --armor -u 7CC06B54 $DIR/rpm/repodata/repomd.xml
+#gpg --batch --yes --detach-sign --armor -u 02C2C81D $DIR/rpm/repodata/repomd.xml
