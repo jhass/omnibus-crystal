@@ -4,4 +4,4 @@ Codename: crystal
 Architectures: i386 amd64
 Components: main
 Description: Crystal apt repository
-SignWith: 7CC06B54
+SignWith: 359365D8
