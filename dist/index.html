@@ -11,18 +11,20 @@ apt-get update
 </code>
 </pre>
   <p>Install:</p>
-<pre><code>apt-get install crystal-nightly</code></pre>
-<h2>RPM</h2>
-<p>Add the repo:</p>
-<pre><code>cat &gt; /etc/yum.repos.d/crystal-nightly.repo &lt;&lt;END
+  <pre><code>apt-get install crystal-nightly</code></pre>
+  <h2>RPM</h2>
+  <p>Add the repo:</p>
+  <pre><code>cat &gt; /etc/yum.repos.d/crystal-nightly.repo &lt;&lt;END
 [crystal]
 name = Crystal
 baseurl = http://nightly.crystal-lang.org/rpm/
 gpgcheck=0
 END
 </code></pre>
-<p>Install:</p>
-<pre><code>dnf install crystal-nightly # On recent Fedora
+  <p>Install:</p>
+  <pre><code>dnf install crystal-nightly # On recent Fedora
 yum install crystal-nightly # On older systems</code></pre>
+  <h2>API documentation</h2>
+  <p>You can find up-to-date API docs generated at the same time at <a href="/api/">here</a>.</p>
 </body>
 </html>
