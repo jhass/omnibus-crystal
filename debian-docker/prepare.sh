@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd "$(dirname "$(realpath "$0")")"
-docker build -t crystal-omnibus-debian .
+docker build --no-cache -t crystal-omnibus-debian .
