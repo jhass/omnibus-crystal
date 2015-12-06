@@ -6,7 +6,7 @@
   <h2>Apt</h2>
   <p>Add the repo:</p>
   <pre><code>apt-key adv --keyserver keys.gnupg.net --recv-keys 09617FD37CC06B54
-echo "deb http://nightly.crystal-lang.org/apt crystal main" > /etc/apt/sources.list.d/crystal-nightly.list
+echo "deb https://nightly.crystal-lang.org/apt crystal main" > /etc/apt/sources.list.d/crystal-nightly.list
 apt-get update
 </code>
 </pre>
@@ -17,7 +17,7 @@ apt-get update
   <pre><code>cat &gt; /etc/yum.repos.d/crystal-nightly.repo &lt;&lt;END
 [crystal]
 name = Crystal
-baseurl = http://nightly.crystal-lang.org/rpm/
+baseurl = https://nightly.crystal-lang.org/rpm/
 gpgcheck=0
 END
 </code></pre>
