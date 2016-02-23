@@ -4,7 +4,6 @@ source git: "https://github.com/manastech/crystal"
 dependency "pcre"
 dependency "bdw-gc"
 dependency "llvm_bin"
-dependency "libpcl"
 dependency "libevent"
 
 env = with_standard_compiler_flags(with_embedded_path(
@@ -31,7 +30,7 @@ build do
   end
 
   mkdir "#{project_dir}/deps"
-  command "make llvm_ext", env: env
+  command "make deps", env: env
   command "#{Dir.pwd}/crystal-#{ohai['os']}-#{ohai['kernel']['machine']} build src/compiler/crystal.cr --release -o #{output_bin}", env: env
 
   block do
