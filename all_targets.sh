@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 cd "$(dirname "$(realpath "$0")")"
 
 for target in {debian,centos}{,32}-docker; do
