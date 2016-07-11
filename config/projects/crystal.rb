@@ -9,10 +9,11 @@ build_version do
 end
 build_iteration 1
 
-override :crystal, version: "0.8.0"
+override :crystal, version: "0.18.7"
 
 dependency 'crystal'
-#dependency 'tgz_package' if mac_os_x? || centos?
+dependency 'shards'
+dependency 'tgz_package' if mac_os_x? || centos?
 
 exclude '\.git*'
 exclude 'bundler\/git'

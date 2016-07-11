@@ -14,24 +14,19 @@
 # limitations under the License.
 #
 
-name "pcre"
-default_version "8.31"
+name "libyaml"
+default_version '0.1.6'
 
-source url: "http://downloads.sourceforge.net/project/pcre/pcre/#{version}/pcre-#{version}.tar.gz",
-       md5: "fab1bb3b91a4c35398263a5c1e0858c1"
+source url: "http://pyyaml.org/download/libyaml/yaml-#{version}.tar.gz",
+       md5: '5fe00cda18ca5daeb43762b80c38e06e'
 
-relative_path "pcre-#{version}"
+relative_path "yaml-#{version}"
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
-  env["CFLAGS"] << " -fPIC"
 
-  command "./configure" \
-          " --prefix=#{install_dir}/embedded" \
-          " --disable-shared" \
-          " --enable-unicode-properties" \
-          " --enable-utf8", env: env
+  command "./configure --prefix=#{install_dir}/embedded", env: env
 
   make "-j #{workers}", env: env
-  make "install", env: env
+  make "-j #{workers} install", env: env
 end

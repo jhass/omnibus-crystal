@@ -1,5 +1,5 @@
 name "crystal"
-source git: "https://github.com/manastech/crystal"
+source git: "https://github.com/crystal-lang/crystal"
 
 dependency "pcre"
 dependency "bdw-gc"
@@ -31,7 +31,10 @@ build do
 
   mkdir "#{project_dir}/deps"
   command "make deps", env: env
-  command "#{Dir.pwd}/crystal-#{ohai['os']}-#{ohai['kernel']['machine']} build src/compiler/crystal.cr --release -o #{output_bin} -D without_openssl -D without_zlib", env: env
+  command "mkdir .build", env: env
+  command "echo #{Dir.pwd}", env: env
+  command "cp #{Dir.pwd}/crystal-#{ohai['os']}-#{ohai['kernel']['machine']} .build/crystal", env: env
+  command "bin/crystal build src/compiler/crystal.cr --release -o #{output_bin} -D without_openssl -D without_zlib", env: env
 
   block do
     raise "Could not build crystal" unless File.exists?(output_bin)
